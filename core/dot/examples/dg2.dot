@@ -1,5 +1,5 @@
 digraph graphName {
-checkInvalidAge [nodeType=CheckInvalidAge];
+checkInvalidAge [nodeType=CheckInvalidAge, type=root, label="new label"];
 getPreapprovalOffer [nodeType=GetPreApprovedOfferPackage];
 getSegmentUser [nodeType=GetSegmentUserFromOffer];
 getScore [nodeType=GetUserCreditScoreFromOffer];

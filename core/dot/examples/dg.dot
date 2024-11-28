@@ -1,50 +1,5 @@
-
 digraph graphName {
-    
-    checkInvalidAge [nodeType=CheckInvalidAge]
-    
-    getPreapprovalOffer [nodeType=GetPreApprovedOfferPackage]
-    getSegmentUser [nodeType=GetSegmentUserFromOffer]
-    getScore [nodeType=GetUserCreditScoreFromOffer]
-    
-    newSegmentUser [nodeType=ValueNode,value=NEW,dataType=string]
-    isEqual [nodeType=EqualsNode]
-    
-    cutOff600 [nodeType=ValueNode,value=600,dataType=integer]
-    cutOff400 [nodeType=ValueNode,value=400,dataType=integer]
-    
-    checkInvalidMomoScoreForNew [nodeType=CheckInvalidMomoScore]
-    checkInvalidMomoScoreForOtherSegment [nodeType=CheckInvalidMomoScore]
-    
-    checkInvalidMomoScore [nodeType=PredicateSwitchNode]
 
-    
-    isRuleCheckInvalidAgeHit[nodeType=IsRuleHit]
-    isRuleCheckInvalidMomoScoreHit [nodeType=IsRuleHit]
-    
-    anyRuleHit [nodeType=OrNode, type=root]
-    
-
-    getPreapprovalOffer -> getSegmentUser [name=OFFER_PACKAGE_INFO_RESPONSE]
-    getPreapprovalOffer -> getScore [name=OFFER_PACKAGE_INFO_RESPONSE]
-    
-    newSegmentUser -> isEqual
-    getSegmentUser -> isEqual
-    
-    getScore -> checkInvalidMomoScoreForNew [name=MOMO_CREDIT_SCORE]
-    cutOff600 -> checkInvalidMomoScoreForNew [name=CUTOFF_SCORE]
-    
-    getScore -> checkInvalidMomoScoreForOtherSegment [name=MOMO_CREDIT_SCORE]
-    cutOff400 -> checkInvalidMomoScoreForOtherSegment [name=CUTOFF_SCORE]
-    
-    isEqual -> checkInvalidMomoScore [name=condition]
-    checkInvalidMomoScoreForNew -> checkInvalidMomoScore [name=whenTrue]
-    checkInvalidMomoScoreForOtherSegment -> checkInvalidMomoScore [name=whenFalse]
-    
-    checkInvalidMomoScore -> isRuleCheckInvalidMomoScoreHit [name=LOAN_RULE_BUILDER]
-    checkInvalidAge -> isRuleCheckInvalidAgeHit [name=LOAN_RULE_BUILDER, label="tung nguyen"]
-
-    
-    isRuleCheckInvalidMomoScoreHit -> anyRuleHit
-    isRuleCheckInvalidAgeHit -> anyRuleHit
+    Node1 [data_type = bool, value = true]
+    Node2 [data_type = bool, value = False]
 }
