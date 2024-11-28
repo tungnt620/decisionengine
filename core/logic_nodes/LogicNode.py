@@ -3,7 +3,7 @@ from typing import Any
 from pydot import Node as PydotNode
 
 
-class Node:
+class LogicNode:
     dot_node: PydotNode
     dependencies: list[Any]
 

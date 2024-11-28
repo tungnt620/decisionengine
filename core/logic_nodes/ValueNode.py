@@ -1,9 +1,9 @@
 from typing import Any
 
-from core.nodes.Node import Node
+from core.logic_nodes.LogicNode import LogicNode
 
 
-class ValueNode(Node):
+class ValueLogicNode(LogicNode):
     def execute(self) -> Any:
         switcher = {
             "int": int,

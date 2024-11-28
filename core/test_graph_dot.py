@@ -11,6 +11,7 @@ def main():
     node.set('label', 'new label')
     print(node.get_attributes())
     edges = graph.get_edges()
+    graph.get_edge()
     print(edges[0].get_source())
     print(edges[0].get_attributes())
 
